@@ -69,7 +69,7 @@ normalize:
     - azure.signinlogs.properties.risk_level_aggregated: $~json.RiskLevelAggregated
     - azure.signinlogs.properties.risk_state: $~json.RiskState
     - azure.signinlogs.properties.service_principal_id: $~json.ServicePrincipalId
-    - azure.signinlogs.properties.status: +parse_json/$~json.Status
+    - azure.signinlogs.properties.parsed_status: +parse_json/$~json.Status
     - azure.signinlogs.properties.token_issuer_name: $~json.TokenIssuerName
     - azure.signinlogs.properties.token_issuer_type: $~json.TokenIssuerType
     - azure.signinlogs.properties.user_display_name: $~json.UserDisplayName
