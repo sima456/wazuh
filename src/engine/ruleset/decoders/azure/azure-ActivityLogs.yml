@@ -54,3 +54,7 @@ normalize:
   - check: NOT $azure.activitylogs.properties.EventCategory AND NOT $azure.activitylogs.Policies
     map:
      - azure.activitylogs.event_category: Administrative
+
+# Cleanup
+  - map:
+    - ~json: +delete

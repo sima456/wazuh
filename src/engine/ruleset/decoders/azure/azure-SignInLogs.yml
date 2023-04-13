@@ -20,17 +20,17 @@ check:
 
 normalize:
   - map:
-    - event.category: +a_append/authentication
+    - event.category: +array_append/authentication
     - event.kind: event
-    - event.type: +a_append/info
+    - event.type: +array_append/info
     - azure.signinlogs.resource_id: $~json.ResourceId
     - source.address: $~json.IPAddress
     - source.ip: $source.address
-    - related.ip: +a_append/$source.ip
+    - related.ip: +array_append/$source.ip
     - client.ip: $source.ip
     - log.level: $~json.level
     - event.duration: $~json.DurationMs
-    - event.duration: +i_calc/mul/1000000
+    - event.duration: +int_calculate/mul/1000000
     - geo.country_iso_code: $~json.Location
     - event.action: $~json.OperationName
     - azure.tenant_id: $~json.TenantId
@@ -93,5 +93,5 @@ normalize:
 
 # Cleanup
   - map:
-    - ~json: +ef_delete
-    - ~temp: +ef_delete
+    - ~json: +delete
+    - ~temp: +delete

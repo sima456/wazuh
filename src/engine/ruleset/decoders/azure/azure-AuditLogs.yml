@@ -23,7 +23,7 @@ normalize:
   - map:
      - event.kind: event
      - event.duration: $~json.DurationMs
-     - event.duration: +i_calc/mul/1000000
+     - event.duration: +int_calculate/mul/1000000
      - log.level: $~json.Level
      - event.action: $~json.OperationName
      - azure.auditlogs.operation_name: $~json.OperationName
@@ -51,3 +51,7 @@ normalize:
   - map:
     - client.ip: $source.ip
     - related.ip: $source.ip
+
+# Cleanup
+  - map:
+    - ~json: +delete
