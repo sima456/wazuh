@@ -21,17 +21,11 @@ constexpr auto WM_SYS_IF_FILE {"/etc/network/interfaces"};
 constexpr auto WM_SYS_IF_DIR_RH {"/etc/sysconfig/network-scripts/"};
 constexpr auto WM_SYS_IF_DIR_SUSE {"/etc/sysconfig/network/"};
 constexpr auto WM_SYS_NET_DIR {"/proc/net/" };
-
 constexpr auto DPKG_PATH {"/var/lib/dpkg/"};
 constexpr auto DPKG_STATUS_PATH {"/var/lib/dpkg/status"};
-
 constexpr auto RPM_PATH {"/var/lib/rpm/"};
-
 constexpr auto PACMAN_PATH {"/var/lib/pacman"};
-
 constexpr auto SNAP_PATH {"/var/lib/snapd"};
-
-
 constexpr auto UNKNOWN_VALUE { " " };
 constexpr auto MAC_ADDRESS_COUNT_SEGMENTS
 {
@@ -39,7 +33,6 @@ constexpr auto MAC_ADDRESS_COUNT_SEGMENTS
 };
 
 #define ROUNDUP(a) ((a) > 0 ? (1 + (((a)-1) | (sizeof(long) - 1))) : sizeof(long))
-
 
 enum OSType
 {
